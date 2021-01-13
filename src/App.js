@@ -22,7 +22,7 @@ function App() {
 
     //   
     const sendQuery = async query => {
-        let data = await axios.get(`http://www.omdbapi.com/?apikey=f256b91e&s=${query}`)
+        let data = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_TOKEN}&s=${query}`)
         setResultData(data.data.Search)
     };
 
