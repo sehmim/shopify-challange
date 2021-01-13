@@ -35,12 +35,18 @@ function App() {
     }
 
     const addtoNominations = (item) => {
-        let newNominations = [...nominations, item]
-        setNominations(newNominations)
+        if (!nominations || nominations.length === 0) {
+          setNominations([item])
 
-        // adding to localStorage
-        ls.set('nominations', newNominations);
+          // adding to localStorage
+          ls.set('nominations', [item]);
+        } else {
+          let newNominations = [...nominations, item]
+          setNominations([...nominations, item])
 
+          // adding to localStorage
+          ls.set('nominations', newNominations);
+        }
     }
 
     const removeFromNomination = (index) => {
@@ -54,7 +60,7 @@ function App() {
 
     // Logic Handles
     const isButtonDisabled = (item) => {
-        return nominations.includes(item) || nominations.length >= 5
+        return nominations && (nominations.includes(item) || nominations.length >= 5)
     }
 
     useEffect(() => {
@@ -90,14 +96,12 @@ function App() {
       <div className="body-components">
       <ul className="ul-right">
         {
-          !resultData ? 
-          <div>
-            No Data to show
-          </div> :
+          resultData ? 
           resultData.map((item, index) => {
             return (
               <li>
                 <MovieCard 
+                  key={index}
                   index={index}
                   item={item}  
                   isButtonDisabled={isButtonDisabled}
@@ -105,7 +109,11 @@ function App() {
                 />
               </li>
             )
-          })
+          }) 
+          :
+          <div>
+            No Data to show
+          </div> 
         }
       </ul>
 
@@ -121,6 +129,7 @@ function App() {
             return (
               <li>
                 <MovieCard 
+                  key={index}
                   index={index}
                   item={item}  
                   isButtonDisabled={isButtonDisabled}
@@ -131,7 +140,7 @@ function App() {
           })
         }
         {
-          nominations.length > 4 ?         
+          (nominations!==null && nominations.length > 4) ?         
             <div>
               <h1>Cant add anymore stuff....</h1>
               <h1>Nomination limit is 5 per user</h1>
