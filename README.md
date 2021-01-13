@@ -5,4 +5,4 @@ Done by your very own 🕺🏽
 [here](http://shopify-challenge.surge.sh/)
 
 ## YouTube Video series of me building this 
-[here]()
+[here](https://youtube.com/playlist?list=PLH9Ip8CbUpbk5CHgi4FSxaWZ6VjuJrHCj)
