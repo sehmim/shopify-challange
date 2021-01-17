@@ -7,5 +7,5 @@ Done by your very own 🕺🏽
 ## YouTube Video series of me building this 
 [here](https://youtube.com/playlist?list=PLH9Ip8CbUpbk5CHgi4FSxaWZ6VjuJrHCj)
 
-[![Visits Badge](https://badges.pufler.dev/visits/puf17640/git-badges)](https://badges.pufler.dev)
+[![Visits Badge](https://badges.pufler.dev/visits/sehmim2/shopify-challange)](https://badges.pufler.dev)
 
